@@ -1,8 +1,5 @@
 package com.example.calc;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -158,12 +155,8 @@ public class Controller {
                 }
             }
         });
-        btnEnter.setOnAction(event -> {
-            Evaluate();
-        });
-        txtInput.textProperty().addListener((observable, oldValue, newValue) -> {
-            InputFieldChanged();
-        });
+        btnEnter.setOnAction(event -> Evaluate());
+        txtInput.textProperty().addListener((observable, oldValue, newValue) -> InputFieldChanged());
     }
 
     public static void KeyPressed(KeyEvent keyEvent) {
