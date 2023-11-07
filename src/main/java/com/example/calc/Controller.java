@@ -14,13 +14,6 @@ import javafx.scene.text.Text;
 public class Controller {
     private static Controller controllerInstance;
 
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
     @FXML
     private Button btn0;
 
@@ -118,57 +111,23 @@ public class Controller {
     private void initialize() {
         controllerInstance = this;
 
-        btn0.setOnAction(event -> {
-            Insert("0");
-        });
-        btn1.setOnAction(event -> {
-            Insert("1");
-        });
-        btn2.setOnAction(event -> {
-            Insert("2");
-        });
-        btn3.setOnAction(event -> {
-            Insert("3");
-        });
-        btn4.setOnAction(event -> {
-            Insert("4");
-        });
-        btn5.setOnAction(event -> {
-            Insert("5");
-        });
-        btn6.setOnAction(event -> {
-            Insert("6");
-        });
-        btn7.setOnAction(event -> {
-            Insert("7");
-        });
-        btn8.setOnAction(event -> {
-            Insert("8");
-        });
-        btn9.setOnAction(event -> {
-            Insert("9");
-        });
-        btnPlus.setOnAction(event -> {
-            Insert("+");
-        });
-        btnMinus.setOnAction(event -> {
-            Insert("-");
-        });
-        btnMultiply.setOnAction(event -> {
-            Insert("*");
-        });
-        btnDivision.setOnAction(event -> {
-            Insert("/");
-        });
-        btnOpenParentheses.setOnAction(event -> {
-            Insert("(");
-        });
-        btnCloseParentheses.setOnAction(event -> {
-            Insert(")");
-        });
-        btnSqrt.setOnAction(event -> {
-            Insert("sqrt()", 4);
-        });
+        btn0.setOnAction(event -> Insert("0"));
+        btn1.setOnAction(event -> Insert("1"));
+        btn2.setOnAction(event -> Insert("2"));
+        btn3.setOnAction(event -> Insert("3"));
+        btn4.setOnAction(event -> Insert("4"));
+        btn5.setOnAction(event -> Insert("5"));
+        btn6.setOnAction(event -> Insert("6"));
+        btn7.setOnAction(event -> Insert("7"));
+        btn8.setOnAction(event -> Insert("8"));
+        btn9.setOnAction(event -> Insert("9"));
+        btnPlus.setOnAction(event -> Insert("+"));
+        btnMinus.setOnAction(event -> Insert("-"));
+        btnMultiply.setOnAction(event -> Insert("*"));
+        btnDivision.setOnAction(event -> Insert("/"));
+        btnOpenParentheses.setOnAction(event -> Insert("("));
+        btnCloseParentheses.setOnAction(event -> Insert(")"));
+        btnSqrt.setOnAction(event -> Insert("sqrt()", 5));
         btnReciprocal.setOnAction(event -> {
             txtInput.setText("1/(" + txtInput.getText() + ")");
             txtInput.positionCaret(txtInput.getText().length());
@@ -177,24 +136,12 @@ public class Controller {
             txtInput.setText("-(" + txtInput.getText() + ")");
             txtInput.positionCaret(txtInput.getText().length());
         });
-        btnPow.setOnAction(event -> {
-            Insert("^");
-        });
-        btnSin.setOnAction(event -> {
-            Insert("sin()", 3);
-        });
-        btnCos.setOnAction(event -> {
-            Insert("cos()", 3);
-        });
-        btnTan.setOnAction(event -> {
-            Insert("tan()", 3);
-        });
-        btnDot.setOnAction(event -> {
-            Insert(".");
-        });
-        btnSave.setOnAction(event -> {
-            SaveToHistory();
-        });
+        btnPow.setOnAction(event -> Insert("^"));
+        btnSin.setOnAction(event -> Insert("sin()", 4));
+        btnCos.setOnAction(event -> Insert("cos()", 4));
+        btnTan.setOnAction(event -> Insert("tan()", 4));
+        btnDot.setOnAction(event -> Insert("."));
+        btnSave.setOnAction(event -> SaveToHistory());
         btnC.setOnAction(event -> {
             SaveToHistory();
             txtInput.setText("");
@@ -271,14 +218,14 @@ public class Controller {
     }
 
     private void Insert(String string) {
-        Insert(string, 0);
+        Insert(string, 1);
     }
 
     private void Insert(String string, int caretShift) {
         if (txtInput.isFocused()) {
             int caretPosition = txtInput.getCaretPosition();
             txtInput.setText(txtInput.getText().substring(0, caretPosition) + string + txtInput.getText().substring(caretPosition));
-            txtInput.positionCaret(caretPosition + 1 + caretShift);
+            txtInput.positionCaret(caretPosition + caretShift);
         } else {
             txtInput.appendText(string);
             if (caretShift != 0) {
