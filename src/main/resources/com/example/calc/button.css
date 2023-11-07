@@ -1,0 +1,24 @@
+
+.button-light{
+    -fx-background-color: #aaaaaa;
+    -fx-border-color:  #cdcdcd;
+    -fx-border-width: 5;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+.button-light:pressed{
+    -fx-border-color:  #9c9c9c;
+    -fx-background-color: #909090;
+}
+
+.button-dark{
+    -fx-background-color: #808080;
+    -fx-border-color:  #cdcdcd;
+    -fx-border-width: 5;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+.button-dark:pressed{
+    -fx-border-color:  #ababab;
+    -fx-background-color: ##747474;
+}
