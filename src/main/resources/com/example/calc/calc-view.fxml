@@ -509,7 +509,7 @@
                         </InnerShadow>
                      </effect>
                   </Button>
-                  <Button fx:id="btnSave" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #dedede;" styleClass="button-dark" stylesheets="@button.css" text="Save" textOverrun="CLIP" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                  <Button fx:id="btnAns" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #dedede;" styleClass="button-dark" stylesheets="@button.css" text="Ans" textOverrun="CLIP" GridPane.columnIndex="6" GridPane.rowIndex="3">
                      <font>
                         <Font name="Dubai Medium" size="24.0" />
                      </font>

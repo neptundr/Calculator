@@ -1,7 +1,12 @@
 package com.example.calc;
 
 public class Calculator {
-    public static double eval(final String str) {
+
+    public static double eval(String str){
+        return evalFormatted(str.replace(",", "."));
+    }
+
+    public static double evalFormatted(final String str) {
         return new Object() {
             int pos = -1, ch;
 

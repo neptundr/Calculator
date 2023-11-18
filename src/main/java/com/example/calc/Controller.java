@@ -66,7 +66,7 @@ public class Controller {
     private Button btnDel;
 
     @FXML
-    private Button btnSave;
+    private Button btnAns;
 
     @FXML
     private Button btnEnter;
@@ -138,7 +138,8 @@ public class Controller {
         btnCos.setOnAction(event -> Insert("cos()", 4));
         btnTan.setOnAction(event -> Insert("tan()", 4));
         btnDot.setOnAction(event -> Insert("."));
-        btnSave.setOnAction(event -> SaveToHistory());
+//        btnSave.setOnAction(event -> SaveToHistory());
+        btnAns.setOnAction(event -> SetAns());
         btnC.setOnAction(event -> {
             SaveToHistory();
             txtInput.setText("");
@@ -233,13 +234,19 @@ public class Controller {
     }
 
     private String previousRecord;
+    private String previousAnswer;
 
     private void SaveToHistory() {
         String result = Result();
+        previousAnswer = result;
         String string = txtInput.getText() + " = " + Result();
         if (!string.equals(previousRecord) && !txtInput.getText().equals(result) && !Result().equals("NaN")) {
             txtHistory.setText(string + "\n" + txtHistory.getText());
             previousRecord = string;
         }
+    }
+
+    private void SetAns(){
+        Insert(previousAnswer, previousAnswer.length());
     }
 }
